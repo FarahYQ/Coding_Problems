@@ -22,3 +22,20 @@ class Solution:
                     unique_triplets.add( ( a, b, -( a + b ) ) )
             visited_nums.add( b )
         return list( unique_triplets )
+
+"""
+Codility Problem: Missing Integer
+"""
+
+def solution(A):
+    """
+    :param A: non-empty list of integers
+    :return: an integer - the smallest positive integer that is missing
+    """
+    missing = 1
+    for elem in sorted(A):
+        if elem == missing:
+            missing += 1
+        if elem > missing:
+            break
+    return missing
